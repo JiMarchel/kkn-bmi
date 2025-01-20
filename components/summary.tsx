@@ -11,7 +11,7 @@ export default function Summary() {
   return (
     <Card className="col-span-4 xl:col-span-3 h-fit z-50">
       <CardHeader>
-        <CardTitle>BMI Kalkulator - Sumbersuko</CardTitle>
+        <CardTitle>BMI Calculator - Sumbersuko</CardTitle>
         <CardDescription>
           <Image
             alt="Logo"
