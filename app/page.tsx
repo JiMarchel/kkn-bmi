@@ -1,9 +1,12 @@
+import Bmi from "@/components/bmi";
+import Summary from "@/components/summary";
 import { BackgroundLines } from "@/components/ui/background-lines";
 
 export default function Home() {
   return (
-    <main>
-      <BackgroundLines>test</BackgroundLines>
-    </main>
+    <BackgroundLines className="grid grid-cols-12 p-4 gap-5">
+      <Summary />
+      <Bmi />
+    </BackgroundLines>
   );
 }
