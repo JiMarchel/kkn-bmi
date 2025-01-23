@@ -32,7 +32,7 @@ export default function Bmi() {
           <input
             name="gender"
             value={gender}
-            defaultValue={gender}
+            onChange={(e) => setGender(e.target.value as "male" | "female")}
             className="hidden"
           />
           <div>
@@ -67,12 +67,14 @@ export default function Bmi() {
               Tinggi Badan (cm)<span className="text-red-600">*</span>
             </Label>
             <Input type="number" name="cm" placeholder="tinggi badan kamu" />
+            <p className="text-red-700">{data?.errors?.cm}</p>
           </div>
           <div>
             <Label>
               Berat Badan (kg)<span className="text-red-600">*</span>
             </Label>
             <Input type="number" name="kg" placeholder="berat badan kamu" />
+            <p className="text-red-700">{data?.errors?.kg}</p>
           </div>
           <Button type="submit" className="w-full" disabled={isPending}>
             Submit

@@ -2,7 +2,7 @@ import { z } from "zod";
 
 const gender = ["male", "female"] as const;
 
-export const bmi = z.object({
+export const bmiSchema = z.object({
   cm: z
     .number()
     .min(100, "Tinggi kamu minimal harus 100cm dulu ya!")
