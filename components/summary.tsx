@@ -10,7 +10,7 @@ import {
 export default function Summary() {
   return (
     <Card className="col-span-4 xl:col-span-3 h-fit z-50">
-      <CardHeader>
+      <CardHeader className="gap-5">
         <CardTitle>BMI Calculator - Sumbersuko</CardTitle>
         <CardDescription>
           <Image
@@ -19,7 +19,7 @@ export default function Summary() {
             width={100}
             height={100}
             priority
-            className="w-full h-full"
+            className="w-full h-full motion-preset-pop motion-preset-seesaw rounded"
           />
         </CardDescription>
       </CardHeader>
