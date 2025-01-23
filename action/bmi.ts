@@ -19,7 +19,38 @@ export const bmiAction = async (_: unknown, formData: FormData) => {
     };
   }
 
-  const parsedData = validateBmiFormData.data;
+  const { gender, kg, cm } = validateBmiFormData.data;
 
-  console.log(parsedData);
+  const calculateBMI = (
+    weight: number,
+    height: number,
+  ): { bmi: number; category: string } => {
+    const heightInMeters = height / 100;
+    const bmi = weight / (heightInMeters * heightInMeters);
+
+    let category = "";
+    if (bmi < 18.5) {
+      category = "Berat Rendah";
+    } else if (bmi < 24.9) {
+      category = "Berat Ideal";
+    } else if (bmi < 29.9) {
+      category = "Berat Berlebih";
+    } else {
+      category = "Obesitas";
+    }
+
+    return { bmi: parseFloat(bmi.toFixed(2)), category };
+  };
+
+  const { bmi, category } = calculateBMI(kg, cm);
+
+  return {
+    success: {
+      cm,
+      kg,
+      gender,
+      bmi,
+      category,
+    },
+  };
 };
