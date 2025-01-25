@@ -13,6 +13,7 @@ import { Label } from "./ui/label";
 import { bmiAction } from "@/action/bmi";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import BmiAlert from "./bmi-alert";
+import { Rocket } from "lucide-react";
 
 export default function Bmi() {
   const [data, formAction, isPending] = useActionState(bmiAction, undefined);
@@ -32,6 +33,8 @@ export default function Bmi() {
         bmi={data?.success?.bmi}
         isDialogOpen={isDialogOpen}
         setIsDialogOpen={() => setIsDialogOpen(false)}
+        cm={data?.success?.cm}
+        kg={data?.success?.kg}
       />
       <Card className="z-50 col-span-4 h-fit">
         <CardHeader>
@@ -91,7 +94,7 @@ export default function Bmi() {
               <p className="text-red-700">{data?.errors?.kg}</p>
             </div>
             <Button type="submit" className="w-full " disabled={isPending}>
-              Submit
+              Submit <Rocket />
             </Button>
           </form>
         </CardContent>

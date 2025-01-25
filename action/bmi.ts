@@ -30,11 +30,11 @@ export const bmiAction = async (_: unknown, formData: FormData) => {
 
     let category = "";
     if (bmi < 18.5) {
-      category = "Berat Rendah";
+      category = "Rendah";
     } else if (bmi < 24.9) {
-      category = "Berat Ideal";
+      category = "Ideal";
     } else if (bmi < 29.9) {
-      category = "Berat Berlebih";
+      category = "Berlebih";
     } else {
       category = "Obesitas";
     }
