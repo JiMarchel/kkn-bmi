@@ -54,18 +54,20 @@ export default function BmiAlert({
 
   return (
     <AlertDialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-      <AlertDialogContent className="motion-preset-confetti ">
+      <AlertDialogContent className="motion-preset-confetti max-w-72 max-h-screen md:max-w-md">
         <AlertDialogHeader>
-          <AlertDialogTitle className="text-3xl flex items-center gap-2">
+          <AlertDialogTitle className="text-xl md:text-3xl flex items-center gap-2">
             <PartyPopper />
             Hasil Perhitungan
             <PartyPopper />
           </AlertDialogTitle>
-          <AlertDialogDescription className="grid gap-2">
+          <AlertDialogDescription className="grid gap-2 text-start">
             <span>
               Tinggi (cm) {cm} - Berat (kg) {kg}
             </span>
-            <span className={`text-2xl ${colorCategory(category)} font-bold`}>
+            <span
+              className={`text-xl md:text-2xl ${colorCategory(category)} font-bold`}
+            >
               Berat {category} - {bmi} BMI
             </span>
             <WordsCategory category={category} />
@@ -85,7 +87,7 @@ const WordsCategory = ({ category }: { category: string | undefined }) => {
   switch (category) {
     case "Rendah":
       return (
-        <span className="text-xl">
+        <span className="md:text-xl">
           Berat badan Anda berada di bawah normal. Pastikan Anda mendapatkan
           asupan nutrisi yang cukup dan konsultasikan dengan ahli gizi untuk
           mencapai berat badan ideal. Jangan khawatir! Dengan pola makan sehat
@@ -102,7 +104,7 @@ const WordsCategory = ({ category }: { category: string | undefined }) => {
       );
     case "Ideal":
       return (
-        <span className="text-xl">
+        <span className="md:text-xl">
           Selamat! Berat badan Anda berada dalam kategori ideal. Pertahankan
           pola makan sehat dan gaya hidup aktif untuk menjaga kesehatan Anda.
           Anda dalam kondisi yang baik <Heart className="inline w-5 h-5" />, dan
@@ -118,7 +120,7 @@ const WordsCategory = ({ category }: { category: string | undefined }) => {
       );
     case "Berlebih":
       return (
-        <span className="text-xl">
+        <span className="md:text-xl">
           Berat badan Anda sedikit berlebih. Cobalah untuk mengatur pola makan
           dan tingkatkan aktivitas fisik untuk mencapai berat badan ideal{" "}
           <BicepsFlexed className="inline w-5 h-5" />. Tetap semangat
@@ -135,7 +137,7 @@ const WordsCategory = ({ category }: { category: string | undefined }) => {
       );
     default:
       return (
-        <span className="text-xl">
+        <span className="md:text-xl">
           Berat badan Anda berada dalam kategori obesitas. Mulailah perubahan
           kecil menuju hidup yang lebih sehat untuk mencegah risiko kesehatan
           yang lebih serius. Jangan berkecil hati
