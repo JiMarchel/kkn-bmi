@@ -10,7 +10,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
-import { Label } from "./ui/label";
 import Image from "next/image";
 
 export const DialogHelp = () => {
