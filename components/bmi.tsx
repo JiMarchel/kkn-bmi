@@ -14,6 +14,7 @@ import { bmiAction } from "@/action/bmi";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import BmiAlert from "./bmi-alert";
 import { Rocket } from "lucide-react";
+import { DialogHelp } from "./dialog-help";
 
 export default function Bmi() {
   const [data, formAction, isPending] = useActionState(bmiAction, undefined);
@@ -36,9 +37,12 @@ export default function Bmi() {
         cm={data?.success?.cm}
         kg={data?.success?.kg}
       />
-      <Card className="z-50 col-span-4 h-fit">
+      <Card className="col-span-12 z-50 md:col-span-4 h-fit">
         <CardHeader>
-          <CardTitle>Form Penghitung Berat Badan</CardTitle>
+          <CardTitle className="flex items-center justify-between md:block">
+            Form Penghitung Berat Badan
+            <DialogHelp />
+          </CardTitle>
           <CardDescription>
             Body Mass Index (BMI) adalah cara menghitung berat badan ideal
             berdasarkan tinggi dan berat badan.
