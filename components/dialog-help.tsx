@@ -20,21 +20,23 @@ export const DialogHelp = () => {
           <HelpCircle />
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-sm sm:max-w-md">
+      <DialogContent className="max-w-72 max-h-screen sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>BMI Calculator - Sumbersuko</DialogTitle>
-          <DialogDescription>
-            <Image
-              alt="Logo"
-              src="/logo.jpg"
-              width={1000}
-              height={1000}
-              priority
-              className="w-full h-full motion-preset-pop rounded"
-            />
-          </DialogDescription>
+          <DialogTitle className="text-sm md:text-xl text-start">
+            BMI Calculator - Sumbersuko
+          </DialogTitle>
+          {/* <DialogDescription> */}
+          {/*   <Image */}
+          {/*     alt="Logo" */}
+          {/*     src="/logo.jpg" */}
+          {/*     width={1000} */}
+          {/*     height={1000} */}
+          {/*     priority */}
+          {/*     className="w-full h-full motion-preset-pop rounded" */}
+          {/*   /> */}
+          {/* </DialogDescription> */}
         </DialogHeader>
-        <div className="">
+        <div className="font-thin text-sm">
           Body Mass Index (BMI) Calculator adalah alat yang digunakan untuk
           mengukur rasio berat badan terhadap tinggi badan seseorang guna
           menentukan kategori berat badan mereka, seperti underweight (kurang
