@@ -9,7 +9,7 @@ import {
 export const Tips = () => {
   return (
     <div className="hidden md:grid md:grid-cols-5 md:col-span-5 h-fit z-50 gap-3">
-      <Card className="col-span-5  ">
+      <Card className="col-span-5  motion-preset-pop ">
         <CardHeader>
           <CardTitle>🍼 Pencegahan Stunting pada Anak</CardTitle>
           <CardDescription>
@@ -40,7 +40,7 @@ export const Tips = () => {
           </div>
         </CardContent>
       </Card>
-      <Card className="col-span-5 ">
+      <Card className="col-span-5 motion-preset-pop ">
         <CardHeader>
           <CardTitle>⚖️ Menjaga Berat Badan agar Tetap Ideal</CardTitle>
           <CardDescription>
