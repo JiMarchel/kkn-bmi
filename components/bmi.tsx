@@ -39,8 +39,8 @@ export default function Bmi() {
       />
       <Card className="col-span-12 z-50 md:col-span-4 h-fit">
         <CardHeader>
-          <CardTitle className="flex items-center justify-between md:block">
-            Form Penghitung Berat Badan
+          <CardTitle className="flex items-center justify-between md:block ">
+            Form Penghitung Berat Badan - Sumbersuko
             <DialogHelp />
           </CardTitle>
           <CardDescription>

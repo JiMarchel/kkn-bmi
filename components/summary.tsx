@@ -9,7 +9,7 @@ import {
 
 export default function Summary() {
   return (
-    <Card className="hidden md:block md:col-span-4 xl:col-span-3 h-fit z-50">
+    <Card className="hidden md:block md:col-span-3 h-fit z-50">
       <CardHeader className="gap-5">
         <CardTitle>BMI Calculator - Sumbersuko</CardTitle>
         <CardDescription>
