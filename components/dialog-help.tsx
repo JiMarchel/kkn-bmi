@@ -20,7 +20,7 @@ export const DialogHelp = () => {
           <HelpCircle />
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-72 max-h-screen sm:max-w-md">
+      <DialogContent className="max-w-72 rounded max-h-screen sm:max-w-md sm:rounded-lg">
         <DialogHeader>
           <DialogTitle className="text-sm md:text-xl text-start">
             BMI Calculator - Sumbersuko

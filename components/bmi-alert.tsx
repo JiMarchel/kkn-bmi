@@ -54,7 +54,7 @@ export default function BmiAlert({
 
   return (
     <AlertDialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-      <AlertDialogContent className="motion-preset-confetti max-w-72 max-h-screen md:max-w-md">
+      <AlertDialogContent className="motion-preset-confetti rounded md:rounded-lg max-w-72 max-h-screen md:max-w-md">
         <AlertDialogHeader>
           <AlertDialogTitle className="text-xl md:text-3xl flex items-center gap-2">
             <PartyPopper />
