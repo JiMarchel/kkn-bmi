@@ -66,7 +66,7 @@ export default function Bmi() {
                   onClick={() => setGender("male")}
                 >
                   <Avatar>
-                    <AvatarImage src="/male.png" />
+                    <AvatarImage src="/male.png" alt="male" />
                     <AvatarFallback>L</AvatarFallback>
                   </Avatar>
                   <Label>Laki-Laki</Label>
@@ -76,7 +76,7 @@ export default function Bmi() {
                   onClick={() => setGender("female")}
                 >
                   <Avatar>
-                    <AvatarImage src="/woman.png" />
+                    <AvatarImage src="/woman.png" alt="woman" />
                     <AvatarFallback>P</AvatarFallback>
                   </Avatar>
                   <Label>Perempuan</Label>
