@@ -17,6 +17,7 @@ import { Loader2, PartyPopper, Rocket } from "lucide-react";
 import { DialogHelp } from "./dialog-help";
 import { colorCategory } from "@/lib/utils";
 import { WordsCategory } from "@/lib/tsx-utils";
+import Image from "next/image";
 
 export default function Bmi() {
   const [data, formAction, isPending] = useActionState(bmiAction, undefined);
@@ -87,15 +88,21 @@ export default function Bmi() {
     return (
       <Card className="col-span-12 z-50 md:col-span-4 h-fit motion-preset-slide-right ">
         <CardHeader>
-          <CardTitle className="flex items-center justify-between md:block ">
-            <div className="flex items-center gap-1">
-              Form Penghitung Berat Badan
-              <Avatar className="md:hidden">
-                <AvatarImage src="/logo.jpg" alt="Logo" />
-                <AvatarFallback>S</AvatarFallback>
-              </Avatar>
+          <CardTitle>
+            <div className="flex flex-col gap-1">
+              <div className="flex justify-between md:block ">
+                <p>Form Penghitung Berat Badan</p>
+                <DialogHelp />
+              </div>
+              <Image
+                alt="Logo"
+                src="/logo.jpg"
+                width={1000}
+                height={1000}
+                priority
+                className="md:hidden w-full h-full motion-preset-pop rounded"
+              />
             </div>
-            <DialogHelp />
           </CardTitle>
           <CardDescription>
             Body Mass Index (BMI) adalah cara menghitung berat badan ideal
