@@ -47,7 +47,8 @@ export default function Bmi() {
             <h1
               className={`text-xl md:text-2xl ${colorCategory(data?.success?.category)} font-bold mb-5`}
             >
-              Berat {data?.success?.category} - {data?.success?.bmi} BMI
+              Berat Badan Anda {data?.success?.category} - {data?.success?.bmi}{" "}
+              BMI
             </h1>
             <WordsCategory category={data?.success?.category} />
             <Button
