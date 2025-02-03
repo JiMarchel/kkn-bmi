@@ -40,7 +40,13 @@ export default function Bmi() {
       <Card className="col-span-12 z-50 md:col-span-4 h-fit">
         <CardHeader>
           <CardTitle className="flex items-center justify-between md:block ">
-            Form Penghitung Berat Badan - Sumbersuko
+            <div className="flex items-center gap-1">
+              Form Penghitung Berat Badan
+              <Avatar className="md:hidden">
+                <AvatarImage src="/logo.jpg" alt="Logo" />
+                <AvatarFallback>S</AvatarFallback>
+              </Avatar>
+            </div>
             <DialogHelp />
           </CardTitle>
           <CardDescription>
