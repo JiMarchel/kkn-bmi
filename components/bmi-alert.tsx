@@ -121,8 +121,8 @@ const WordsCategory = ({ category }: { category: string | undefined }) => {
     case "Berlebih":
       return (
         <span className="md:text-xl">
-          Berat badan Anda sedikit berlebih. Cobalah untuk mengatur pola makan
-          dan tingkatkan aktivitas fisik untuk mencapai berat badan ideal{" "}
+          Berat badan Anda berlebih. Cobalah untuk mengatur pola makan dan
+          tingkatkan aktivitas fisik untuk mencapai berat badan ideal{" "}
           <BicepsFlexed className="inline w-5 h-5" />. Tetap semangat
           <Flame className="inline w-5 h-5" />! Dengan sedikit perubahan gaya
           hidup, Anda bisa mencapai berat badan yang lebih sehat{" "}
