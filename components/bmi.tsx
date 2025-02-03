@@ -12,32 +12,79 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { bmiAction } from "@/action/bmi";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import BmiAlert from "./bmi-alert";
-import { Rocket } from "lucide-react";
+// import BmiAlert from "./bmi-alert";
+import { Loader2, PartyPopper, Rocket } from "lucide-react";
 import { DialogHelp } from "./dialog-help";
+import { colorCategory } from "@/lib/utils";
+import { WordsCategory } from "@/lib/tsx-utils";
 
 export default function Bmi() {
   const [data, formAction, isPending] = useActionState(bmiAction, undefined);
   const [gender, setGender] = useState<"male" | "female">("male");
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [result, setResult] = useState(false);
 
   useEffect(() => {
     if (data?.success) {
-      setIsDialogOpen(true);
+      setResult(true);
     }
   }, [data]);
 
-  return (
-    <>
-      <BmiAlert
-        category={data?.success?.category}
-        bmi={data?.success?.bmi}
-        isDialogOpen={isDialogOpen}
-        setIsDialogOpen={() => setIsDialogOpen(false)}
-        cm={data?.success?.cm}
-        kg={data?.success?.kg}
-      />
-      <Card className="col-span-12 z-50 md:col-span-4 h-fit">
+  if (result) {
+    return (
+      <div className="grid h-fit col-span-12 md:col-span-4 z-50 gap-3">
+        <Card className="motion-preset-blur-right ">
+          <CardHeader>
+            <CardTitle className="flex items-center justify-between md:block ">
+              <div className="flex items-center gap-1 text-xl md:text-2xl ">
+                <PartyPopper /> Hasil Penhitungan Berat Badan <PartyPopper />
+              </div>
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p>
+              Tinggi (cm) {data?.success?.cm} - Berat (kg) {data?.success?.kg}
+            </p>
+            <h1
+              className={`text-xl md:text-2xl ${colorCategory(data?.success?.category)} font-bold mb-5`}
+            >
+              Berat {data?.success?.category} - {data?.success?.bmi} BMI
+            </h1>
+            <WordsCategory category={data?.success?.category} />
+            <Button
+              className="w-full block mt-5"
+              onClick={() => setResult(false)}
+            >
+              Hitung Ulang
+            </Button>
+          </CardContent>
+        </Card>
+        <Card className="motion-preset-blur-right">
+          <CardHeader>
+            <CardTitle className="flex items-center justify-between md:block">
+              💡 Tips Kesehatan & Kebiasaan Baik
+            </CardTitle>
+            <CardDescription>
+              Jaga kesehatan dengan kebiasaan sederhana setiap hari.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p>
+              Minumlah air putih 💧 minimal 8 gelas sehari agar tubuh tetap
+              terhidrasi dengan baik. Konsumsilah makanan sehat seperti sayuran
+              🥦 dan buah 🍓 setiap hari untuk memenuhi kebutuhan nutrisi tubuh.
+              Jangan lupa untuk berolahraga secara rutin, seperti jogging atau
+              bersepeda 🚴‍♂️ selama minimal 30 menit per hari guna menjaga
+              kebugaran fisik. Pastikan juga Anda mendapatkan tidur yang cukup
+              😴 sekitar 7-9 jam per malam untuk meningkatkan sistem imun dan
+              energi harian Anda.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  } else {
+    return (
+      <Card className="col-span-12 z-50 md:col-span-4 h-fit motion-preset-slide-right ">
         <CardHeader>
           <CardTitle className="flex items-center justify-between md:block ">
             <div className="flex items-center gap-1">
@@ -104,11 +151,11 @@ export default function Bmi() {
               <p className="text-red-700">{data?.errors?.kg}</p>
             </div>
             <Button type="submit" className="w-full " disabled={isPending}>
-              Submit <Rocket />
+              Submit {isPending ? <Loader2 /> : <Rocket />}
             </Button>
           </form>
         </CardContent>
       </Card>
-    </>
-  );
+    );
+  }
 }
