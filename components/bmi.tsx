@@ -90,7 +90,7 @@ export default function Bmi() {
         <CardHeader>
           <CardTitle>
             <div className="flex flex-col gap-1">
-              <div className="flex justify-between md:block ">
+              <div className="flex justify-between items-center md:block ">
                 <p>Form Penghitung Berat Badan</p>
                 <DialogHelp />
               </div>
